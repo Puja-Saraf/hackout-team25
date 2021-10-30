@@ -11,6 +11,7 @@ import Profilepage from '../pages/Profilepage'
 import Registerpage from '../pages/Registerpage'
 import ResetPasswordPage from '../pages/ResetPasswordPage'
 import MainContest from './MainContest'
+import ExpenseTracker from '../ExpenseTracker';
 // import Todo from './Todo/Todo.js'
 
 
@@ -25,6 +26,7 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/profile' component={Profilepage} />
           {/* <ProtectedRoute exact path='/todo' component={Todo} /> */}
           <ProtectedRoute exact path='/contests' component={MainContest} />
+          <ProtectedRoute exact path='/expense' component={ExpenseTracker} />
           <ProtectedRoute exact path='/forgot-password' component={ForgotPasswordPage} />
           <ProtectedRoute exact path='/reset-password' component={ResetPasswordPage} />
           <Route exact path='*' component={NotfoundPage} />

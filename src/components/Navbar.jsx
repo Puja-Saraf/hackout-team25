@@ -74,7 +74,7 @@ export function Navbar() {
                           className="nav-link"
                           to="/todo"
                         >
-                          ToDos
+                          ActivityLog
                         </NavLink>
                       </li>
                     )}

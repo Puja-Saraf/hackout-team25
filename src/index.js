@@ -7,6 +7,9 @@ import {
   extendTheme,
   theme,
 } from '@chakra-ui/react'
+import { SpeechProvider } from '@speechly/react-client';
+
+import { Provider } from './context/context';
 
 const customTheme = extendTheme({
   config: {
@@ -19,11 +22,15 @@ const customTheme = extendTheme({
 })
 
 ReactDOM.render(
+  <SpeechProvider appId="058ad9f4-07d8-4933-8653-06ae62957839" language="en-US">
+    <Provider>
   <React.StrictMode>
     <ChakraProvider theme={customTheme}>
       <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
       <App />
     </ChakraProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>
+  </SpeechProvider>,
   document.getElementById('root')
 )
