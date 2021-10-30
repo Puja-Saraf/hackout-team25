@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { List as MUIList, ListItem, ListItemAvatar, Avatar, ListItemText, ListItemSecondaryAction, IconButton, Slide } from '@material-ui/core';
-import { Delete, MoneyOff,AttachMoney } from '@material-ui/icons';
+import { Delete, MoneyOff} from '@material-ui/icons';
 import { useAuth } from '../../../contexts/AuthContext';
 import { ExpenseTrackerContext } from '../../../context/context';
 import useStyles from './styles';
