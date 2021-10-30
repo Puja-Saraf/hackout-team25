@@ -8,7 +8,7 @@ import formatDate from '../../../utils/formatDate';
 import { ExpenseTrackerContext } from '../../../context/context';
 import { incomeCategories, expenseCategories } from '../../../constants/categories';
 import useStyles from './styles';
-
+import { useAuth } from '../../../contexts/AuthContext';
 const initialState = {
   amount: '',
   category: '',
@@ -16,7 +16,9 @@ const initialState = {
   date: formatDate(new Date()),
 };
 
+
 const NewTransactionForm = () => {
+  const { currentUser } = useAuth();
   const classes = useStyles();
   const { addTransaction } = useContext(ExpenseTrackerContext);
   const [formData, setFormData] = useState(initialState);
@@ -26,6 +28,7 @@ const NewTransactionForm = () => {
   const [open, setOpen] = React.useState(false);
 
   const createTransaction = () => {
+    
     if (Number.isNaN(Number(formData.amount)) || !formData.date.includes('-')) return;
 
     if (incomeCategories.map((iC) => iC.type).includes(formData.category)) {
@@ -35,7 +38,7 @@ const NewTransactionForm = () => {
     }
 
     setOpen(true);
-    addTransaction({ ...formData, amount: Number(formData.amount), id: uuidv4() });
+    addTransaction({ ...formData, amount: Number(formData.amount), id: uuidv4(),uid:currentUser.uid });
     setFormData(initialState);
   };
 

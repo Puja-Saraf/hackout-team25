@@ -3,16 +3,14 @@ import {
   chakra,
   FormControl,
   FormLabel,
-  Heading,
+
   HStack,
   Input,
   Stack,
   useToast,
-  Text,
-  Box,
-  Flex,
+
 } from "@chakra-ui/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { Card } from "../components/Card";

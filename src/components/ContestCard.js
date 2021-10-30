@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ContestCard = (props) => {
+    // console.log(props.users)
     return (
         <div>
         <div className="topp">
@@ -13,7 +14,7 @@ const ContestCard = (props) => {
 
                         props.users.map((curElem) => {
                         
-                            {/* const { avatar_url, id, login, type } = curElem; */}
+                           
                         return (<div className="col-lg-4 col-md-6 col-sm-12 my-5" >
                <div className="card c_ard" >
                <div >
@@ -37,7 +38,7 @@ const ContestCard = (props) => {
     <div className="card-text" style={{color: "#F0D9FF"}}><small>End Time: {!curElem.EndTime?"Unknown":curElem.EndTime}</small></div>
     {curElem.Duration && <div className="card-text" style={{color: "#F0D9FF"}}><small>Duration: {!curElem.Duration?"Unknown":curElem.Duration}</small></div>}
     <br />
-    <a href={curElem.url} target="_blank" className="btn btn-sm btn-dark">Compete</a>
+    <a href={curElem.url} target="_blank" rel="noreferrer" className="btn btn-sm btn-dark">Compete</a>
   </div>
 </div>
             </div>

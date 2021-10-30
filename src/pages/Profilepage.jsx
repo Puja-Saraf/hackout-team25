@@ -1,16 +1,13 @@
 import React, { useContext } from "react";
 import { Layout } from "../components/Layout";
+import { ExpenseTrackerContext } from "../context/context";
 import {
   Badge,
-  chakra,
-  Code,
-  Container,
+
   Heading,
-  Box,
-  Image,
-  Center,
+ 
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+
 // import { Card } from "../components/Card";
 import "./Profilepage.css";
 import { useAuth } from "../contexts/AuthContext";
@@ -33,6 +30,13 @@ export default function Profilepage() {
     if (str[i] === "@") break;
   }
   const username = str.substring(0, i);
+  const { transactions} = useContext(ExpenseTrackerContext);
+  const transactionsN=transactions.filter(t=>t.uid===currentUser.uid)
+  const balance = transactionsN.reduce(
+    (acc, currVal) =>
+      currVal.type === "Expense" ? acc - currVal.amount : acc + currVal.amount,
+    0
+  );
   // const { balance } = useContext(ExpenseTrackerContext);
   return (
     // <>
@@ -132,8 +136,8 @@ export default function Profilepage() {
               <div className="d-flex">
                 <div>Balance :</div>
                 <div style={{ marginLeft: "60%" }}>
-                  {/* {balance} */}
-                  nil
+                  {balance}
+                  
                   </div>
               </div>
             </div>

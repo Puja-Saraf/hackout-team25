@@ -6,10 +6,18 @@ import useStyles from './styles';
 import Form from './Form/Form';
 import List from './List/List';
 import InfoCard from '../InfoCard';
-
+import { useAuth } from '../../contexts/AuthContext';
 const ExpenseTracker = () => {
+  const { currentUser } = useAuth();
   const classes = useStyles();
-  const { balance } = useContext(ExpenseTrackerContext);
+  const { transactions} = useContext(ExpenseTrackerContext);
+  const transactionsN=transactions.filter(t=>t.uid===currentUser.uid)
+  const balance = transactionsN.reduce(
+    (acc, currVal) =>
+      currVal.type === "Expense" ? acc - currVal.amount : acc + currVal.amount,
+    0
+  );
+
 
   return (
     <Card className={classes.root}>
