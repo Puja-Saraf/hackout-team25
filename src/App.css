@@ -1,0 +1,54 @@
+.headum {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .c_ard {
+    width: 360px;
+    border: none;
+    border-radius: 10px;
+    background-color: #9D84B7;
+    color: #150050;
+    box-shadow:10px 10px 15px #583D72;     /*BFA2DB*/
+    margin: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid #F0D9FF;
+  }
+  .c_ard:hover{
+    cursor: pointer;
+    background-color: #22577A;
+    opacity: 0.7;
+    color: #CEE5D0;
+  }
+  .headum{
+    font-size: 35px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #150050;
+  }
+  
+  .tt{
+    font-size: 18px;
+    font-weight: bolder;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  
+  .articles {
+    font-size: 10px;
+    color: #a1aab9;
+  }
+  .topp{
+    position: relative;
+    top: 60px;
+    margin: 5% 5% 10% 5%;
+  }
+  .btn:hover{
+    color: white;
+  }
+  .card-img-top{
+    border-radius:20%;
+  }
