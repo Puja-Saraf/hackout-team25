@@ -2,10 +2,12 @@ import React, { useState, useEffect,Component } from 'react'
 import ContestCard from './ContestCard';
 import { NavLink } from "react-router-dom";
 
+
 const MainContest = () => {
 
     
     // let allContests = ["Hurre"];
+    const [loading,setLoading] = useState(true);
     const [articles, setArticles] = useState([]);
     const [upcoming,setUpcoming] = useState([]);
     function getUsers() {
@@ -24,9 +26,11 @@ const MainContest = () => {
     }
     function getOtherUsers() {
         let url = 'https://contesttrackerapi.herokuapp.com';
+         setLoading(true);
         fetch(url)
             .then(res => res.json())
             .then(out => {
+              setLoading(false);
                 for (let i = 0; i < Object.keys(out.result.upcoming).length; i++) {
                     let curr = out.result.upcoming[i];
                   //  setArticles(articles.concat(curr));
@@ -35,6 +39,7 @@ const MainContest = () => {
                   })
                 }
             })
+            
     }
 
     useEffect(() => {
@@ -47,6 +52,7 @@ const MainContest = () => {
 
     return (
         <>
+        
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
   <NavLink className="navbar-brand" to="/">Home</NavLink>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,24 +67,27 @@ const MainContest = () => {
       <li className="nav-item">
         <a className="nav-link" href="#upcoming">Upcoming</a>
       </li>
-      {/* <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Filter
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#Hackerearth">HACKEREARTH</a>
-          <a class="dropdown-item" href="#Codeforces">CODEFORCES</a>
-          <a class="dropdown-item" href="#Atcoder">ATCODER</a>
-          <a class="dropdown-item" href="#Codechef">CODECHEF</a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a className="dropdown-item" href="#Hackerearth"> <input type="checkbox"checked="true"/> <span className="xx">HACKEREARTH</span></a>
+          <a className="dropdown-item" href="#Codeforces"><input type="checkbox" checked="true"/> <span className="xx"> CODEFORCES</span></a>
+         <a className="dropdown-item" href="#Atcoder"><input type="checkbox" checked="true"/> <span className="xx"> ATCODER</span></a>
+         <a className="dropdown-item" href="#Codechef"><input type="checkbox" checked="true"/><span className="xx">CODECHEF </span></a>
         </div>
-      </li> */}
+      </li>
     </ul>
   </div>
 </nav>
+
          <section id="ongoing">
+         
         <ContestCard users={articles} names="ONGOING CONTESTS"/>
         </section>
         <section id="upcoming">
+        {loading && <div className="loading">Loading&#8230;</div>}
         <ContestCard users={upcoming} names="UPCOMING CONTESTS" />
         </section>
          </>
