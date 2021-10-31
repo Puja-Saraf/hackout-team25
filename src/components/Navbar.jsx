@@ -13,6 +13,7 @@ export function Navbar() {
           <div className="col-10 mx-auto">
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
               <div className="container-fluid">
+              <img src="../images/collegemate.png" style={{height:"70px", marginRight:"10px"}}/>
                 <NavLink activeClassName="" className="navbar-brand" to="/">
                   Home
                 </NavLink>

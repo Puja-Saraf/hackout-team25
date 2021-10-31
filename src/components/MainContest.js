@@ -71,6 +71,7 @@ const MainContest = () => {
     <>
     
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
+      <img src="../images/collegemate.png" style={{height:"70px", marginRight:"10px"}}/>
         <NavLink className="navbar-brand" to="/">
           Home
         </NavLink>

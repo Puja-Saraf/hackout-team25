@@ -22,7 +22,10 @@ const App = () => {
 
   return (
     <div>
-        <div style={{textAlign:"center", padding:"10px", fontWeight:'700', position:"relative", top:"6px"}}><i className="fa fa-home fa-2x" style={{color:"#c9acc8"}}></i>&nbsp;<NavLink className="navbar-brand" to="/">Home</NavLink></div>
+        <div style={{textAlign:"center", paddingTop:"26px",paddingBottom:"10px", fontWeight:'700', top:"6px", display:"flex", alignItems:"center", justifyContent:"center"}}>
+          {/* <i className="fa fa-home fa-2x" style={{color:"#c9acc8"}}></i> */}
+          <img src="./images/collegemate.png" style={{height:"50px"}}/>&nbsp;
+          <NavLink className="navbar-brand" to="/">Home</NavLink></div>
       <Grid className={classes.grid} container spacing={0} alignItems="center" justify="center" style={{ height: '100vh'}}>
         <Grid item xs={12} sm={4} className={classes.mobile}>
           <Details title="Income" />

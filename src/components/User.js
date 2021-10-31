@@ -18,7 +18,10 @@ function User(){
   : "https://i.pinimg.com/474x/8b/8a/32/8b8a32d2d8c34f5a79fc1ffb0326b753.jpg";
     return (
         <>
-        <div style={{textAlign:"center", padding:"10px", fontWeight:'700'}}><i className="fa fa-home fa-2x" style={{color:"#c9acc8"}}></i>&nbsp;<NavLink className="navbar-brand" to="/">Home</NavLink></div>
+        <div style={{textAlign:"center",padding:"10px", fontWeight:'700', top:"6px", display:"flex", alignItems:"center", justifyContent:"center"}}>
+          {/* <i className="fa fa-home fa-2x" style={{color:"#c9acc8"}}></i> */}
+          <img src="./images/collegemate.png" style={{height:"50px"}}/>&nbsp;
+          <NavLink className="navbar-brand" to="/">Home</NavLink></div>
         <div className='User'>
             <div className="logo">
                 <img src={logo} alt="logo" />
