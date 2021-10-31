@@ -33,7 +33,8 @@ const quotes=["'It's not enough to be busy, so are the ants. The question is, wh
 "'Your future is created by what you do today, not tomorrow.' - Anonymous",
 "'The bad news is time flies. The good news is you're the pilot.' -- Michael Altshuler",
 "'The best thing about the future is that it comes one day at a time.' - Abraham Lincoln",
-"'I must govern the clock, not be governed by it.' - Golda Meir"]
+"'I must govern the clock, not be governed by it.' - Golda Meir",
+"“Fall seven times, stand up eight.” – Japanese Proverb","Successful people are not gifted; they just work hard, then succeed on purpose.” – G.K. Nielson","Perseverance is the hard work you do after you get tired of doing the hard work you already did.” – Newt Gingrich"]
 
 const temp=Math.round(Math.random()*quotes.length);
 
