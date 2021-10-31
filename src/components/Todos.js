@@ -7,7 +7,7 @@ import {useAuth} from '../contexts/AuthContext'
 function Todos(){
     const { todos, selectedProject } = useContext(TodoContext)
     const {currentUser}=useAuth()
-    const todoNew=todos.filter(todo=>todo.uid==currentUser.uid)
+    const todoNew=todos.filter(todo=>todo.uid===currentUser.uid)
 
     return (
         <div className='Todos'>

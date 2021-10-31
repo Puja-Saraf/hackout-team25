@@ -6,7 +6,6 @@ import { calendarItems } from '../constants'
 import firebase from '../firebase'
 import moment from 'moment'
 import randomcolor from 'randomcolor'
-import { updateCurrentUser } from '@firebase/auth'
 import {useAuth} from '../contexts/AuthContext'
 
 

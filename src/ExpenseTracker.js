@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Grid,Divider } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { NavLink } from "react-router-dom";
 import { SpeechState, useSpeechContext } from "@speechly/react-client";
 import { PushToTalkButton, PushToTalkButtonContainer } from '@speechly/react-ui';

@@ -29,7 +29,7 @@ export default function AuthContextProvider({children}){
         return signInWithEmailAndPassword(auth,email,password)
     }
     function signInWithGoogle(){
-        const provider=new GoogleAuthProvider
+        const provider=new GoogleAuthProvider()
         return signInWithPopup(auth,provider)
     }
     function forgotPassword(email){

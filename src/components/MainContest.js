@@ -90,12 +90,12 @@ const MainContest = () => {
           <ul className="navbar-nav navbar-right mx-5">
             <li className="nav-item ">
               <a className="nav-link" href="#ongoing">
-                Ongoing <span className="sr-only">(current)</span>
+                Ongoing ({articles.length}) <span className="sr-only">(current)</span>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#upcoming">
-                Upcoming
+                Upcoming ({upcoming.length})
               </a>
             </li>
             {/* <li className="nav-item dropdown">
