@@ -1,18 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import { Grid } from '@material-ui/core';
+import React, { useEffect, useRef } from "react";
+import { Grid } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import { SpeechState, useSpeechContext } from "@speechly/react-client";
-import { PushToTalkButton, PushToTalkButtonContainer } from '@speechly/react-ui';
+import {
+  PushToTalkButton,
+  PushToTalkButtonContainer,
+} from "@speechly/react-ui";
 
-import { Details, Main } from './components';
-import useStyles from './styles';
+import { Details, Main } from "./components";
+import useStyles from "./styles";
 
 const App = () => {
   const classes = useStyles();
   const { speechState } = useSpeechContext();
-  const main = useRef(null)
+  const main = useRef(null);
 
-  const executeScroll = () => main.current.scrollIntoView()    
+  const executeScroll = () => main.current.scrollIntoView();
 
   useEffect(() => {
     if (speechState === SpeechState.Recording) {
@@ -22,11 +25,37 @@ const App = () => {
 
   return (
     <div>
-        <div style={{textAlign:"center", paddingTop:"26px",paddingBottom:"10px", fontWeight:'700', top:"6px", display:"flex", alignItems:"center", justifyContent:"center"}}>
-          {/* <i className="fa fa-home fa-2x" style={{color:"#c9acc8"}}></i> */}
-          <img src="./images/collegemate.png" style={{height:"50px"}} alt="logo"/>&nbsp;
-          <NavLink className="navbar-brand" to="/">Home</NavLink></div>
-      <Grid className={classes.grid} container spacing={0} alignItems="center" justify="center" style={{ height: '100vh'}}>
+      <div
+        style={{
+          textAlign: "center",
+          paddingTop: "26px",
+          paddingBottom: "10px",
+          fontWeight: "700",
+          top: "6px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {/* <i className="fa fa-home fa-2x" style={{color:"#c9acc8"}}></i> */}
+        <img
+          src="./images/collegemate.png"
+          style={{ height: "50px" }}
+          alt="logo"
+        />
+        &nbsp;
+        <NavLink className="navbar-brand" to="/">
+          Home
+        </NavLink>
+      </div>
+      <Grid
+        className={classes.grid}
+        container
+        spacing={0}
+        alignItems="center"
+        justify="center"
+        style={{ height: "100vh" }}
+      >
         <Grid item xs={12} sm={4} className={classes.mobile}>
           <Details title="Income" />
         </Grid>
@@ -39,7 +68,7 @@ const App = () => {
         <Grid item xs={12} sm={4} className={classes.last}>
           <Details title="Expense" />
         </Grid>
-        <PushToTalkButtonContainer >
+        <PushToTalkButtonContainer>
           <PushToTalkButton />
         </PushToTalkButtonContainer>
       </Grid>

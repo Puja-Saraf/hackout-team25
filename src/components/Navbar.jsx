@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { NavLink } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
 
 export function Navbar() {
   const { currentUser, logout } = useAuth();
@@ -13,7 +13,11 @@ export function Navbar() {
           <div className="col-10 mx-auto">
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
               <div className="container-fluid">
-              <img src="../images/collegemate.png" style={{height:"70px", marginRight:"10px"}}/>
+                <img
+                  src="../images/collegemate.png"
+                  alt="logo"
+                  style={{ height: "70px", marginRight: "10px" }}
+                />
                 <NavLink activeClassName="" className="navbar-brand" to="/">
                   Home
                 </NavLink>
@@ -68,17 +72,7 @@ export function Navbar() {
                         </NavLink>
                       </li>
                     )}
-                    {currentUser && (
-                      <li className="nav-item">
-                        <NavLink
-                          activeClassName="menu_active"
-                          className="nav-link"
-                          to="/todo"
-                        >
-                          ActivityLog
-                        </NavLink>
-                      </li>
-                    )}
+
                     {currentUser && (
                       <li className="nav-item">
                         <NavLink
@@ -90,6 +84,7 @@ export function Navbar() {
                         </NavLink>
                       </li>
                     )}
+
                     {currentUser && (
                       <li className="nav-item">
                         <NavLink
@@ -98,6 +93,17 @@ export function Navbar() {
                           to="/contests"
                         >
                           Contests
+                        </NavLink>
+                      </li>
+                    )}
+                    {currentUser && (
+                      <li className="nav-item">
+                        <NavLink
+                          activeClassName="menu_active"
+                          className="nav-link"
+                          to="/todo"
+                        >
+                          ActivityLog
                         </NavLink>
                       </li>
                     )}

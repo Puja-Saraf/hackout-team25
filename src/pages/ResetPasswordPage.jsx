@@ -7,75 +7,78 @@ import {
   Input,
   Stack,
   useToast,
-} from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { Card } from '../components/Card'
-import { Layout } from '../components/Layout'
-import { useHistory, useLocation } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+} from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Card } from "../components/Card";
+import { Layout } from "../components/Layout";
+import { useHistory, useLocation } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
-function useQuery(){
-  const location=useLocation()
+function useQuery() {
+  const location = useLocation();
   return new URLSearchParams(location.search);
 }
 
 export default function ResetPasswordPage() {
-  const {resetPassword}=useAuth()
-  const history = useHistory()
-  const query=useQuery()
-  console.log(query.get('mode'))
-  console.log(query.get('oobCode'))
-  console.log(query.get('continueUrl'))
-  const toast = useToast()
+  const { resetPassword } = useAuth();
+  const history = useHistory();
+  const query = useQuery();
+  console.log(query.get("mode"));
+  console.log(query.get("oobCode"));
+  console.log(query.get("continueUrl"));
+  const toast = useToast();
 
-  const [newPassword, setNewPassword] = useState('')
+  const [newPassword, setNewPassword] = useState("");
 
   return (
     <Layout>
-      <Heading textAlign='center' my={12}>
+      <Heading textAlign="center" my={12}>
         Reset password
       </Heading>
-      <Card maxW='md' mx='auto' mt={4}>
+      <Card maxW="md" mx="auto" mt={4}>
         <chakra.form
-          onSubmit={async e => {
-            e.preventDefault()
+          onSubmit={async (e) => {
+            e.preventDefault();
             // handle reset password
-            resetPassword(query.get('oobCode'), newPassword)
-            .then(response => {
-              console.log(response)
-              toast({
-                description:"Password has been changed. You can now login.",
-                status:'success',
-                duration:5000,
-                isClosable:true
+            resetPassword(query.get("oobCode"), newPassword)
+              .then((response) => {
+                console.log(response);
+                toast({
+                  description: "Password has been changed. You can now login.",
+                  status: "success",
+                  duration: 5000,
+                  isClosable: true,
+                });
+                history.push("/login");
               })
-              history.push('/login')
-            })
-            .catch(error=>{
-              console.log(error.message)
-              toast({
-                description:error.message,
-                status:'error',
-                duration:5000,
-                isClosable:true
-              })
-            })
+              .catch((error) => {
+                console.log(error.message);
+                toast({
+                  description: error.message,
+                  status: "error",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              });
           }}
         >
-          <Stack spacing='6'>
-            <FormControl id='password'>
+          <Stack spacing="6">
+            <FormControl id="password">
               <FormLabel>New password</FormLabel>
-              <Input 
+              <Input
                 value={newPassword}
-                onChange={e=>setNewPassword(e.target.value)}
-                type='password' autoComplete='password' required />
+                onChange={(e) => setNewPassword(e.target.value)}
+                type="password"
+                autoComplete="password"
+                required
+              />
             </FormControl>
-            <Button type='submit' colorScheme='primary' size='lg' fontSize='md'>
+            <Button type="submit" colorScheme="primary" size="lg" fontSize="md">
               Reset password
             </Button>
           </Stack>
         </chakra.form>
       </Card>
     </Layout>
-  )
+  );
 }

@@ -1,10 +1,12 @@
-#root, body, html {
-    height: 100%;
-    margin: 0;
+#root,
+body,
+html {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    background: linear-gradient( #FCD1D1, #AEE1E1 );
-    background-color: #FCD1D1;
-    background-size: cover;
+  background: linear-gradient(#fcd1d1, #aee1e1);
+  background-color: #fcd1d1;
+  background-size: cover;
 }

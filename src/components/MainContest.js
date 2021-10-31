@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ContestCard from "./ContestCard";
 import { NavLink } from "react-router-dom";
 
@@ -24,9 +24,9 @@ const MainContest = () => {
 
           //  setArticles(articles.concat(curr));
           // if (checkar.includes(curr.Platform)) {
-            setArticles((prev) => {
-              return [...prev, curr];
-            });
+          setArticles((prev) => {
+            return [...prev, curr];
+          });
           // } else {
           //   continue;
           // }
@@ -47,9 +47,9 @@ const MainContest = () => {
           //   return [...prev, curr];
           // });
           // if (checkar.includes(curr.Platform)) {
-            setUpcoming((prev) => {
-              return [...prev, curr];
-            });
+          setUpcoming((prev) => {
+            return [...prev, curr];
+          });
           // } else {
           //   continue;
           // }
@@ -59,19 +59,20 @@ const MainContest = () => {
 
   useEffect(() => {
     getUsers();
-  },[]);
+  }, []);
 
   useEffect(() => {
     getOtherUsers();
-  },[]);
-
+  }, []);
 
   return (
-    
     <>
-    
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
-      <img src="../images/collegemate.png" style={{height:"70px", marginRight:"10px"}}/>
+        <img
+          src="../images/collegemate.png"
+          alt="logo"
+          style={{ height: "70px", marginRight: "10px" }}
+        />
         <NavLink className="navbar-brand" to="/">
           Home
         </NavLink>
@@ -91,7 +92,8 @@ const MainContest = () => {
           <ul className="navbar-nav navbar-right mx-5">
             <li className="nav-item ">
               <a className="nav-link" href="#ongoing">
-                Ongoing ({articles.length}) <span className="sr-only">(current)</span>
+                Ongoing ({articles.length}){" "}
+                <span className="sr-only">(current)</span>
               </a>
             </li>
             <li className="nav-item">
@@ -166,9 +168,7 @@ const MainContest = () => {
       </nav>
 
       <section id="ongoing">
-        <ContestCard users={
-          articles
-        } names="ONGOING CONTESTS" />
+        <ContestCard users={articles} names="ONGOING CONTESTS" />
       </section>
       <section id="upcoming">
         {loading && <div className="loading">Loading&#8230;</div>}

@@ -3,14 +3,12 @@ import {
   chakra,
   FormControl,
   FormLabel,
-
   HStack,
   Input,
   Stack,
   useToast,
-
 } from "@chakra-ui/react";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { Card } from "../components/Card";
@@ -18,7 +16,6 @@ import DividerWithText from "../components/DividerWithText";
 import { Layout } from "../components/Layout";
 import { useAuth } from "../contexts/AuthContext";
 import useMounted from "../hooks/useMounted";
-
 
 export default function Loginpage() {
   const history = useHistory();
@@ -29,8 +26,8 @@ export default function Loginpage() {
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
-  const {login, signInWithGoogle}=useAuth()
-  const mounted=useMounted()
+  const { login, signInWithGoogle } = useAuth();
+  const mounted = useMounted();
 
   return (
     <Layout>
@@ -39,27 +36,30 @@ export default function Loginpage() {
           onSubmit={async (e) => {
             e.preventDefault();
             // your login logic here
-            if(!email || !password)
-            {
+            if (!email || !password) {
               toast({
-                description:"Credentials not valid",
-                status:'error',
-                duration:5000,
-                isClosable:true
-              })
+                description: "Credentials not valid",
+                status: "error",
+                duration: 5000,
+                isClosable: true,
+              });
             }
-            setIsSubmitting(true)
-            login(email,password).then((response)=>{console.log(response)
-            history.push(location.state?.from ?? '/profile')})
-            .catch((error)=>{
-              console.log(error.message)
-              toast({
-                description:error.message,
-                status:'error',
-                duration:5000,
-                isClosable:true
-              })})
-              .finally(()=>mounted.current && setIsSubmitting(false))
+            setIsSubmitting(true);
+            login(email, password)
+              .then((response) => {
+                console.log(response);
+                history.push(location.state?.from ?? "/profile");
+              })
+              .catch((error) => {
+                console.log(error.message);
+                toast({
+                  description: error.message,
+                  status: "error",
+                  duration: 5000,
+                  isClosable: true,
+                });
+              })
+              .finally(() => mounted.current && setIsSubmitting(false));
           }}
         >
           <Stack spacing="6">
@@ -88,7 +88,15 @@ export default function Loginpage() {
               />
             </FormControl>
             {/* <PasswordField /> */}
-            <Button isLoading={isSubmitting} type="submit" backgroundColor="#9955A5" colorScheme="pink" size="lg" fontSize="md" color="white">
+            <Button
+              isLoading={isSubmitting}
+              type="submit"
+              backgroundColor="#9955A5"
+              colorScheme="pink"
+              size="lg"
+              fontSize="md"
+              color="white"
+            >
               Sign in
             </Button>
           </Stack>
@@ -109,9 +117,13 @@ export default function Loginpage() {
           color="#5D3464"
           colorScheme="pink"
           leftIcon={<FaGoogle />}
-          onClick={() => signInWithGoogle().then(user=>{
-            console.log(user)
-          }).catch(error=>console.log(error))}
+          onClick={() =>
+            signInWithGoogle()
+              .then((user) => {
+                console.log(user);
+              })
+              .catch((error) => console.log(error))
+          }
         >
           Sign in with Google
         </Button>

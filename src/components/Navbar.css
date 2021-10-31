@@ -1,26 +1,25 @@
-.navbar{
-    background-color: #5D3464 !important;
-    padding: 15px;
-    color: #c9acc8;
-  }
-  
-  .navbar-brand{
-    font-size: 1.5rem !important;
-    color: #c9acc8 !important;
-  }
-  
-  .navbar a{
-    font-size: 1.3rem;
-    text-transform: capitalize;
-  }
-  
-  .navbar a:hover{
-    color: #FFE3FE !important;
+.navbar {
+  background-color: #5d3464 !important;
+  padding: 15px;
+  color: #c9acc8;
+}
 
-  }
-  
-  .menu_active{
-    font-weight: bold;
-    border-bottom: 1px solid #c9acc8 ;
-    color: #c9acc8 !important;
-  }
+.navbar-brand {
+  font-size: 1.5rem !important;
+  color: #c9acc8 !important;
+}
+
+.navbar a {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+.navbar a:hover {
+  color: #ffe3fe !important;
+}
+
+.menu_active {
+  font-weight: bold;
+  border-bottom: 1px solid #c9acc8;
+  color: #c9acc8 !important;
+}

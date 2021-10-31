@@ -1,34 +1,28 @@
-.__header
-{
-    position: absolute;
-    width: 100%;
-    height: 30%;
-/* top: -11px; */
-background: #a32dad;
-border-radius: 0% 0% 8% 8%;
-z-index: 1;
+.__header {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  /* top: -11px; */
+  background: #a32dad;
+  border-radius: 0% 0% 8% 8%;
+  z-index: 1;
 }
-.my__Profile
-{
-    /* position: absolute; */
-   margin-top: 20%;
-   font-weight: bolder;
-   color: ivory;
-   letter-spacing: 4px;
-
+.my__Profile {
+  /* position: absolute; */
+  margin-top: 20%;
+  font-weight: bolder;
+  color: ivory;
+  letter-spacing: 4px;
 }
-.profileImg
-{
-   margin-top: 45%;
+.profileImg {
+  margin-top: 45%;
 }
-.final__items
-{
-    position: relative;
-    width: 100%;
-    height: 7%;
-background: #c685cc67;
-border-radius: 4px;
+.final__items {
+  position: relative;
+  width: 100%;
+  height: 7%;
+  background: #c685cc67;
+  border-radius: 4px;
 }
-
 
 /* style={{marginTop:"20%",fontWeight:"bold"} */
