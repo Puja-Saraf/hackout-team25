@@ -24,7 +24,7 @@ export default function Registerpage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
 
-  const { register } = useAuth();
+  const { register, signInWithGoogle } = useAuth();
   const mounted = useMounted();
 
   return (
@@ -108,7 +108,12 @@ export default function Registerpage() {
           color="#5D3464"
           colorScheme="pink"
           leftIcon={<FaGoogle />}
-          onClick={() => alert("sign in with google")}
+          onClick={() =>
+            signInWithGoogle()
+              .then((user) => {
+                console.log(user);
+              })
+              .catch((error) => console.log(error))}
         >
           Sign in with Google
         </Button>
