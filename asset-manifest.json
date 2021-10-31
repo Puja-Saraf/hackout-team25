@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/hackout-team25/static/css/main.b442047a.chunk.css",
+    "main.js": "/hackout-team25/static/js/main.18263d94.chunk.js",
+    "main.js.map": "/hackout-team25/static/js/main.18263d94.chunk.js.map",
+    "runtime-main.js": "/hackout-team25/static/js/runtime-main.3d712b6d.js",
+    "runtime-main.js.map": "/hackout-team25/static/js/runtime-main.3d712b6d.js.map",
+    "static/js/2.26008e2f.chunk.js": "/hackout-team25/static/js/2.26008e2f.chunk.js",
+    "static/js/2.26008e2f.chunk.js.map": "/hackout-team25/static/js/2.26008e2f.chunk.js.map",
+    "index.html": "/hackout-team25/index.html",
+    "static/css/main.b442047a.chunk.css.map": "/hackout-team25/static/css/main.b442047a.chunk.css.map",
+    "static/js/2.26008e2f.chunk.js.LICENSE.txt": "/hackout-team25/static/js/2.26008e2f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/hackout-team25/static/media/bg3.670756f4.jfif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d712b6d.js",
+    "static/js/2.26008e2f.chunk.js",
+    "static/css/main.b442047a.chunk.css",
+    "static/js/main.18263d94.chunk.js"
+  ]
+}
