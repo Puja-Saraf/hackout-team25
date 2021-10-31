@@ -15,9 +15,9 @@ function Next7Days({ todos }) {
             }
         })
 
-        const today = parseInt(moment().format('d'))
+        const Today = parseInt(moment().format('d'))
 
-        const arrangeDays = sortedTodosByDay.slice(today).concat(sortedTodosByDay.slice(0, today))
+        const arrangeDays = sortedTodosByDay.slice(Today).concat(sortedTodosByDay.slice(0, Today))
 
         setWeekTodos(arrangeDays)
     }, [todos])

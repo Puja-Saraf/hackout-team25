@@ -4,7 +4,7 @@ import { useTodos, useProjects, useFilterTodos, useProjectsWithStats } from '../
 const TodoContext = createContext()
 
 function TodoContextProvider({children}){
-    const defaultProject = 'today'
+    const defaultProject = 'Today'
     const [selectedProject, setSelectedProject] = useState(defaultProject)
     const [selectedTodo, setSelectedTodo] = useState(undefined)
 

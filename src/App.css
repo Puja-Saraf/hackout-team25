@@ -694,3 +694,6 @@ animation: spinner 1s linear 0s infinite;
 .xx:hover{
   color:#583D72 !important;
 }
+.name_{
+  cursor: pointer;
+}
