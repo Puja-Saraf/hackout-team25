@@ -1,4 +1,4 @@
-const incomeColors = [
+const incomeColors =[
   "#123123",
   "#154731",
   "#165f40",
