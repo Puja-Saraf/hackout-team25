@@ -12,6 +12,31 @@ import {
 import "./Profilepage.css";
 import { useAuth } from "../contexts/AuthContext";
 // import { ExpenseTrackerContext } from "../context/context";
+
+const quotes=["'It's not enough to be busy, so are the ants. The question is, what are we busy about?' -- Henry David Thoreau",
+"'The key is in not spending time, but in investing it.' -- Stephen R. Covey",
+"'Time is more valuable than money. You can get more money, but you cannot get more time.' - Jim Rohn",
+"The shorter way to do many things is to only do one thing at a time.' - Mozart",
+"'Better to be three hours too soon, than a minute too late.' - William Shakespeare",
+"'Yesterday is gone. Tomorrow has not yet come. We have only today. Let us begin.' - Mother Teresa",
+"'Don't be fooled by the calendar. There are only as many days in the year as you make use of. One man gets only a week's value out of a year while another man gets a full year's value out of a week.' -- Charles Richards",
+"'Give me six hours to chop down a tree and I will spend the first four sharpening the axe.' - Abraham Lincoln",
+"'One reason so few of us achieve what we truly want is that we never direct our focus; we never concentrate our power. Most people dabble their way through life, never deciding to master anything in particular.' - Tony Robbins",
+"'The common man is not concerned about the passage of time, the man of talent is driven by it.' -- Shoppenhauer",
+"'Take care of the minutes and the hours will take care of themselves.' - Lord Chesterfield",
+"'Determine never to be idle. No person will have occasion to complain of the want of time who never loses any. It is wonderful how much can be done if we are always doing.' -- Thomas Jefferson",
+"'Once you have mastered time, you will understand how true it is that most people overestimate what they can accomplish in a year - and underestimate what they can achieve in a decade!' -- Tony Robbins",
+"'To do two things at once is to do neither.' -- Publius Syrus",
+"'He who know most grieves most for wasted time.' -- Dante",
+"'Time is really the only capital that any human being has, and the only thing he can't afford to lose.' -- Thomas Edison",
+"'Most of us spend too much time on what is urgent, and not enough time on what is important.' - Steven Covey",
+"'Your future is created by what you do today, not tomorrow.' - Anonymous",
+"'The bad news is time flies. The good news is you're the pilot.' -- Michael Altshuler",
+"'The best thing about the future is that it comes one day at a time.' - Abraham Lincoln",
+"'I must govern the clock, not be governed by it.' - Golda Meir"]
+
+const temp=Math.round(Math.random()*quotes.length);
+
 export default function Profilepage() {
   const { currentUser } = useAuth();
   const property = {
@@ -141,9 +166,12 @@ export default function Profilepage() {
                   </div>
               </div>
             </div>
+            <div style={{ textAlign:"center", margin:"10% 4% 0", fontStyle:"italic", fontWeight:"bold", color:"#a32dad"}}>
+              {quotes[temp]}
+            </div>
           {/* </NavLink> */}
 
-          <div
+          {/* <div
             className="final__items mt-4 p-2 fw-bold"
             style={{ width: "19rem", marginLeft: "6%" }}
           >
@@ -160,7 +188,7 @@ export default function Profilepage() {
               <div>Contests :</div>
               <div style={{ marginLeft: "65%" }}>9</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
